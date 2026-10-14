@@ -1,0 +1,115 @@
+{
+  "case_id": "ASTG-US-DOOR-FAIL-03",
+  "version": "0.1.0",
+  "seed": 406,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "ADA 2010",
+    "section": "404",
+    "source_url": "https://www.ada.gov"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "STUDIO",
+  "spaces": [
+    {
+      "id": "LIVING_1",
+      "type": "living",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 180.0,
+          "y": 0.0
+        },
+        {
+          "x": 180.0,
+          "y": 160.0
+        },
+        {
+          "x": 0.0,
+          "y": 160.0
+        }
+      ],
+      "area_sf": 200.0,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": true,
+      "window_area_sf": 22.0,
+      "is_accessible": true
+    },
+    {
+      "id": "BATH_1",
+      "type": "bathroom",
+      "polygon": [
+        {
+          "x": 180.0,
+          "y": 0.0
+        },
+        {
+          "x": 252.0,
+          "y": 0.0
+        },
+        {
+          "x": 252.0,
+          "y": 60.0
+        },
+        {
+          "x": 180.0,
+          "y": 60.0
+        }
+      ],
+      "area_sf": 30.0,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    }
+  ],
+  "doors": [
+    {
+      "id": "D_BATH",
+      "from_space": "LIVING_1",
+      "to_space": "BATH_1",
+      "door_type": "hinged",
+      "clear_opening_in": 28.0,
+      "latch_clearance_in": 10.0
+    }
+  ],
+  "topology": [
+    {
+      "source": "LIVING_1",
+      "target": "BATH_1",
+      "via": "D_BATH",
+      "is_egress": false,
+      "is_accessible": true
+    }
+  ],
+  "expected_label": "FAIL",
+  "expected_violations": [
+    {
+      "rule_id": "ADA_404",
+      "element": "D_BATH",
+      "measured": 28.0,
+      "threshold": 32.0,
+      "units": "inches",
+      "severity": "civil_rights"
+    },
+    {
+      "rule_id": "ADA_404",
+      "element": "D_BATH",
+      "measured": 10.0,
+      "threshold": 18.0,
+      "units": "inches",
+      "severity": "civil_rights"
+    }
+  ],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_studio_narrow",
+    "mutation": "substandard_opening_28in"
+  }
+}

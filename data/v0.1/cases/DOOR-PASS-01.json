@@ -1,7 +1,7 @@
 {
   "case_id": "ASTG-US-DOOR-PASS-01",
   "version": "0.1.0",
-  "seed": 2001,
+  "seed": 401,
   "jurisdiction": {
     "country": "US",
     "code_edition": "ADA 2010",
@@ -35,8 +35,8 @@
       "area_sf": 180.0,
       "clear_width_in": null,
       "occupant_load": null,
-      "has_window": false,
-      "window_area_sf": null,
+      "has_window": true,
+      "window_area_sf": 20.0,
       "is_accessible": true
     },
     {
@@ -64,7 +64,7 @@
       "clear_width_in": null,
       "occupant_load": null,
       "has_window": true,
-      "window_area_sf": 18.0,
+      "window_area_sf": 16.0,
       "is_accessible": true
     }
   ],
@@ -92,7 +92,7 @@
   "oracle_version": null,
   "provenance": {
     "generation_method": "parametric_perturbation",
-    "base_typology": "US_1BR_standard",
-    "mutation": "door_clearance_compliant"
+    "base_typology": "US_1BR_unit",
+    "mutation": "clearance_34_18.5in"
   }
 }

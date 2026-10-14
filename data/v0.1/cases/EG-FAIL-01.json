@@ -1,0 +1,236 @@
+{
+  "case_id": "ASTG-US-EG-FAIL-01",
+  "version": "0.1.0",
+  "seed": 202,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "IBC 2024",
+    "section": "1006.2",
+    "source_url": "https://codes.iccsafe.org"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "2BR",
+  "spaces": [
+    {
+      "id": "R1",
+      "type": "bedroom",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 144.0,
+          "y": 0.0
+        },
+        {
+          "x": 144.0,
+          "y": 120.0
+        },
+        {
+          "x": 0.0,
+          "y": 120.0
+        }
+      ],
+      "area_sf": 120.0,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": true,
+      "window_area_sf": 15.0,
+      "is_accessible": true
+    },
+    {
+      "id": "C1",
+      "type": "corridor",
+      "polygon": [
+        {
+          "x": 144.0,
+          "y": 0.0
+        },
+        {
+          "x": 264.0,
+          "y": 0.0
+        },
+        {
+          "x": 264.0,
+          "y": 48.0
+        },
+        {
+          "x": 144.0,
+          "y": 48.0
+        }
+      ],
+      "area_sf": 40.0,
+      "clear_width_in": 48.0,
+      "occupant_load": 20,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    },
+    {
+      "id": "C2",
+      "type": "corridor",
+      "polygon": [
+        {
+          "x": 264.0,
+          "y": 0.0
+        },
+        {
+          "x": 384.0,
+          "y": 0.0
+        },
+        {
+          "x": 384.0,
+          "y": 48.0
+        },
+        {
+          "x": 264.0,
+          "y": 48.0
+        }
+      ],
+      "area_sf": 40.0,
+      "clear_width_in": 48.0,
+      "occupant_load": 20,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    },
+    {
+      "id": "C3",
+      "type": "corridor",
+      "polygon": [
+        {
+          "x": 384.0,
+          "y": 0.0
+        },
+        {
+          "x": 504.0,
+          "y": 0.0
+        },
+        {
+          "x": 504.0,
+          "y": 48.0
+        },
+        {
+          "x": 384.0,
+          "y": 48.0
+        }
+      ],
+      "area_sf": 40.0,
+      "clear_width_in": 48.0,
+      "occupant_load": 20,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    },
+    {
+      "id": "STAIR_1",
+      "type": "stairwell",
+      "polygon": [
+        {
+          "x": 504.0,
+          "y": 0.0
+        },
+        {
+          "x": 604.0,
+          "y": 0.0
+        },
+        {
+          "x": 604.0,
+          "y": 100.0
+        },
+        {
+          "x": 504.0,
+          "y": 100.0
+        }
+      ],
+      "area_sf": 69.4,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    }
+  ],
+  "doors": [
+    {
+      "id": "D1",
+      "from_space": "R1",
+      "to_space": "C1",
+      "door_type": "hinged",
+      "clear_opening_in": 34.0,
+      "latch_clearance_in": 18.0
+    },
+    {
+      "id": "D2",
+      "from_space": "C1",
+      "to_space": "C2",
+      "door_type": "hinged",
+      "clear_opening_in": 48.0,
+      "latch_clearance_in": 18.0
+    },
+    {
+      "id": "D3",
+      "from_space": "C2",
+      "to_space": "C3",
+      "door_type": "hinged",
+      "clear_opening_in": 48.0,
+      "latch_clearance_in": 18.0
+    },
+    {
+      "id": "D4",
+      "from_space": "C3",
+      "to_space": "STAIR_1",
+      "door_type": "hinged",
+      "clear_opening_in": 36.0,
+      "latch_clearance_in": 18.0
+    }
+  ],
+  "topology": [
+    {
+      "source": "R1",
+      "target": "C1",
+      "via": "D1",
+      "is_egress": true,
+      "is_accessible": true
+    },
+    {
+      "source": "C1",
+      "target": "C2",
+      "via": "D2",
+      "is_egress": true,
+      "is_accessible": true
+    },
+    {
+      "source": "C2",
+      "target": "C3",
+      "via": "D3",
+      "is_egress": true,
+      "is_accessible": true
+    },
+    {
+      "source": "C3",
+      "target": "STAIR_1",
+      "via": "D4",
+      "is_egress": true,
+      "is_accessible": true
+    }
+  ],
+  "expected_label": "FAIL",
+  "expected_violations": [
+    {
+      "rule_id": "IBC_1006.2",
+      "element": "R1",
+      "measured": 80.0,
+      "threshold": 75.0,
+      "units": "feet",
+      "severity": "life_safety"
+    }
+  ],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_2BR_extended_corridor",
+    "mutation": "travel_distance_80ft"
+  }
+}

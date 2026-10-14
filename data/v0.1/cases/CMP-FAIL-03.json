@@ -1,0 +1,166 @@
+{
+  "case_id": "ASTG-US-CMP-FAIL-03",
+  "version": "0.1.0",
+  "seed": 606,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "IBC 2024 / ADA 2010",
+    "section": "Composite",
+    "source_url": "https://codes.iccsafe.org"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "2BR",
+  "spaces": [
+    {
+      "id": "C1",
+      "type": "corridor",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 240.0,
+          "y": 0.0
+        },
+        {
+          "x": 240.0,
+          "y": 40.0
+        },
+        {
+          "x": 0.0,
+          "y": 40.0
+        }
+      ],
+      "area_sf": 66.7,
+      "clear_width_in": 40.0,
+      "occupant_load": 60,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    },
+    {
+      "id": "BEDROOM_1",
+      "type": "bedroom",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 40.0
+        },
+        {
+          "x": 140.0,
+          "y": 40.0
+        },
+        {
+          "x": 140.0,
+          "y": 160.0
+        },
+        {
+          "x": 0.0,
+          "y": 160.0
+        }
+      ],
+      "area_sf": 116.7,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": 0.0,
+      "is_accessible": true
+    },
+    {
+      "id": "ENTRY_1",
+      "type": "entry",
+      "polygon": [
+        {
+          "x": 240.0,
+          "y": 0.0
+        },
+        {
+          "x": 300.0,
+          "y": 0.0
+        },
+        {
+          "x": 300.0,
+          "y": 40.0
+        },
+        {
+          "x": 240.0,
+          "y": 40.0
+        }
+      ],
+      "area_sf": 16.7,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    }
+  ],
+  "doors": [
+    {
+      "id": "D_ENTRY",
+      "from_space": "C1",
+      "to_space": "ENTRY_1",
+      "door_type": "hinged",
+      "clear_opening_in": 36.0,
+      "latch_clearance_in": 18.0
+    },
+    {
+      "id": "D_BR1",
+      "from_space": "C1",
+      "to_space": "BEDROOM_1",
+      "door_type": "hinged",
+      "clear_opening_in": 34.0,
+      "latch_clearance_in": 12.0
+    }
+  ],
+  "topology": [
+    {
+      "source": "C1",
+      "target": "ENTRY_1",
+      "via": "D_ENTRY",
+      "is_egress": true,
+      "is_accessible": true
+    },
+    {
+      "source": "C1",
+      "target": "BEDROOM_1",
+      "via": "D_BR1",
+      "is_egress": false,
+      "is_accessible": true
+    }
+  ],
+  "expected_label": "FAIL",
+  "expected_violations": [
+    {
+      "rule_id": "IBC_1020.2",
+      "element": "C1",
+      "measured": 40.0,
+      "threshold": 44.0,
+      "units": "inches",
+      "severity": "life_safety"
+    },
+    {
+      "rule_id": "ADA_404",
+      "element": "D_BR1",
+      "measured": 12.0,
+      "threshold": 18.0,
+      "units": "inches",
+      "severity": "civil_rights"
+    },
+    {
+      "rule_id": "WFR_10PCT",
+      "element": "BEDROOM_1",
+      "measured": 0.0,
+      "threshold": 0.1,
+      "units": "inches",
+      "severity": "voluntary"
+    }
+  ],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_2BR_corridor",
+    "mutation": "triple_torture_case"
+  }
+}

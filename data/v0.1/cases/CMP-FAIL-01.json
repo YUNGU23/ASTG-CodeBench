@@ -1,0 +1,143 @@
+{
+  "case_id": "ASTG-US-CMP-FAIL-01",
+  "version": "0.1.0",
+  "seed": 602,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "IBC 2024 / ADA 2010",
+    "section": "Composite",
+    "source_url": "https://codes.iccsafe.org"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "1BR",
+  "spaces": [
+    {
+      "id": "C1",
+      "type": "corridor",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 240.0,
+          "y": 0.0
+        },
+        {
+          "x": 240.0,
+          "y": 42.0
+        },
+        {
+          "x": 0.0,
+          "y": 42.0
+        }
+      ],
+      "area_sf": 70.0,
+      "clear_width_in": 42.0,
+      "occupant_load": 60,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    },
+    {
+      "id": "BATH_1",
+      "type": "bathroom",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 42.0
+        },
+        {
+          "x": 54.0,
+          "y": 42.0
+        },
+        {
+          "x": 54.0,
+          "y": 96.0
+        },
+        {
+          "x": 0.0,
+          "y": 96.0
+        }
+      ],
+      "area_sf": 20.3,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    },
+    {
+      "id": "ENTRY_1",
+      "type": "entry",
+      "polygon": [
+        {
+          "x": 240.0,
+          "y": 0.0
+        },
+        {
+          "x": 300.0,
+          "y": 0.0
+        },
+        {
+          "x": 300.0,
+          "y": 42.0
+        },
+        {
+          "x": 240.0,
+          "y": 42.0
+        }
+      ],
+      "area_sf": 17.5,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    }
+  ],
+  "doors": [
+    {
+      "id": "D1",
+      "from_space": "C1",
+      "to_space": "ENTRY_1",
+      "door_type": "hinged",
+      "clear_opening_in": 36.0,
+      "latch_clearance_in": 18.0
+    }
+  ],
+  "topology": [
+    {
+      "source": "C1",
+      "target": "ENTRY_1",
+      "via": "D1",
+      "is_egress": true,
+      "is_accessible": true
+    }
+  ],
+  "expected_label": "FAIL",
+  "expected_violations": [
+    {
+      "rule_id": "IBC_1020.2",
+      "element": "C1",
+      "measured": 42.0,
+      "threshold": 44.0,
+      "units": "inches",
+      "severity": "life_safety"
+    },
+    {
+      "rule_id": "ADA_604",
+      "element": "BATH_1",
+      "measured": 54.0,
+      "threshold": 60.0,
+      "units": "inches",
+      "severity": "civil_rights"
+    }
+  ],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_1BR_full_suite",
+    "mutation": "compound_corridor_and_wc_violation"
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "case_id": "ASTG-US-CMP-PASS-03",
+  "version": "0.1.0",
+  "seed": 605,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "IBC 2024 / ADA 2010",
+    "section": "Composite",
+    "source_url": "https://codes.iccsafe.org"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "STUDIO",
+  "spaces": [
+    {
+      "id": "LIVING_1",
+      "type": "living",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 220.0,
+          "y": 0.0
+        },
+        {
+          "x": 220.0,
+          "y": 180.0
+        },
+        {
+          "x": 0.0,
+          "y": 180.0
+        }
+      ],
+      "area_sf": 275.0,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": true,
+      "window_area_sf": 35.0,
+      "is_accessible": true
+    },
+    {
+      "id": "BATH_1",
+      "type": "bathroom",
+      "polygon": [
+        {
+          "x": 220.0,
+          "y": 0.0
+        },
+        {
+          "x": 292.0,
+          "y": 0.0
+        },
+        {
+          "x": 292.0,
+          "y": 60.0
+        },
+        {
+          "x": 220.0,
+          "y": 60.0
+        }
+      ],
+      "area_sf": 30.0,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    },
+    {
+      "id": "ENTRY_1",
+      "type": "entry",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 180.0
+        },
+        {
+          "x": 60.0,
+          "y": 180.0
+        },
+        {
+          "x": 60.0,
+          "y": 240.0
+        },
+        {
+          "x": 0.0,
+          "y": 240.0
+        }
+      ],
+      "area_sf": 25.0,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    }
+  ],
+  "doors": [
+    {
+      "id": "D_ENTRY",
+      "from_space": "ENTRY_1",
+      "to_space": "LIVING_1",
+      "door_type": "hinged",
+      "clear_opening_in": 36.0,
+      "latch_clearance_in": 18.0
+    },
+    {
+      "id": "D_BATH",
+      "from_space": "LIVING_1",
+      "to_space": "BATH_1",
+      "door_type": "hinged",
+      "clear_opening_in": 34.0,
+      "latch_clearance_in": 18.0
+    }
+  ],
+  "topology": [
+    {
+      "source": "ENTRY_1",
+      "target": "LIVING_1",
+      "via": "D_ENTRY",
+      "is_egress": true,
+      "is_accessible": true
+    },
+    {
+      "source": "LIVING_1",
+      "target": "BATH_1",
+      "via": "D_BATH",
+      "is_egress": false,
+      "is_accessible": true
+    }
+  ],
+  "expected_label": "PASS",
+  "expected_violations": [],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_studio_efficient",
+    "mutation": "studio_compliant_baseline"
+  }
+}

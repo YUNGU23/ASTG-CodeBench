@@ -1,0 +1,81 @@
+{
+  "case_id": "ASTG-US-WFR-PASS-03",
+  "version": "0.1.0",
+  "seed": 505,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "LEED v4.1 (voluntary)",
+    "section": "EQ Credit: Daylight",
+    "source_url": "https://www.usgbc.org"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "1BR",
+  "spaces": [
+    {
+      "id": "LIVING_1",
+      "type": "living",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 200.0,
+          "y": 0.0
+        },
+        {
+          "x": 200.0,
+          "y": 150.0
+        },
+        {
+          "x": 0.0,
+          "y": 150.0
+        }
+      ],
+      "area_sf": 208.3,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": true,
+      "window_area_sf": 32.0,
+      "is_accessible": true
+    },
+    {
+      "id": "BEDROOM_1",
+      "type": "bedroom",
+      "polygon": [
+        {
+          "x": 200.0,
+          "y": 0.0
+        },
+        {
+          "x": 340.0,
+          "y": 0.0
+        },
+        {
+          "x": 340.0,
+          "y": 140.0
+        },
+        {
+          "x": 200.0,
+          "y": 140.0
+        }
+      ],
+      "area_sf": 136.1,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": true,
+      "window_area_sf": 18.0,
+      "is_accessible": true
+    }
+  ],
+  "doors": [],
+  "topology": [],
+  "expected_label": "PASS",
+  "expected_violations": [],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_1BR_suite",
+    "mutation": "multi_room_daylight_pass"
+  }
+}

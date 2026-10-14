@@ -1,7 +1,7 @@
 {
   "case_id": "ASTG-US-DOOR-FAIL-01",
   "version": "0.1.0",
-  "seed": 2002,
+  "seed": 402,
   "jurisdiction": {
     "country": "US",
     "code_edition": "ADA 2010",
@@ -35,8 +35,8 @@
       "area_sf": 180.0,
       "clear_width_in": null,
       "occupant_load": null,
-      "has_window": false,
-      "window_area_sf": null,
+      "has_window": true,
+      "window_area_sf": 20.0,
       "is_accessible": true
     },
     {
@@ -64,7 +64,7 @@
       "clear_width_in": null,
       "occupant_load": null,
       "has_window": true,
-      "window_area_sf": 18.0,
+      "window_area_sf": 16.0,
       "is_accessible": true
     }
   ],
@@ -109,7 +109,7 @@
   "oracle_version": null,
   "provenance": {
     "generation_method": "parametric_perturbation",
-    "base_typology": "US_1BR_standard",
-    "mutation": "door_clearance_narrow"
+    "base_typology": "US_1BR_unit",
+    "mutation": "narrow_opening_30in"
   }
 }

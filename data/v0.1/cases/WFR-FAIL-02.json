@@ -1,0 +1,62 @@
+{
+  "case_id": "ASTG-US-WFR-FAIL-02",
+  "version": "0.1.0",
+  "seed": 504,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "LEED v4.1 (voluntary)",
+    "section": "EQ Credit: Daylight",
+    "source_url": "https://www.usgbc.org"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "STUDIO",
+  "spaces": [
+    {
+      "id": "BEDROOM_1",
+      "type": "bedroom",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 144.0,
+          "y": 0.0
+        },
+        {
+          "x": 144.0,
+          "y": 120.0
+        },
+        {
+          "x": 0.0,
+          "y": 120.0
+        }
+      ],
+      "area_sf": 120.0,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": 0.0,
+      "is_accessible": true
+    }
+  ],
+  "doors": [],
+  "topology": [],
+  "expected_label": "FAIL",
+  "expected_violations": [
+    {
+      "rule_id": "WFR_10PCT",
+      "element": "BEDROOM_1",
+      "measured": 0.0,
+      "threshold": 0.1,
+      "units": "ratio",
+      "severity": "voluntary"
+    }
+  ],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_studio_den",
+    "mutation": "windowless_bedroom"
+  }
+}

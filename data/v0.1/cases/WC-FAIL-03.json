@@ -1,0 +1,62 @@
+{
+  "case_id": "ASTG-US-WC-FAIL-03",
+  "version": "0.1.0",
+  "seed": 306,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "ADA 2010",
+    "section": "604",
+    "source_url": "https://www.ada.gov"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "1BR",
+  "spaces": [
+    {
+      "id": "BATH_1",
+      "type": "bathroom",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 64.0,
+          "y": 0.0
+        },
+        {
+          "x": 64.0,
+          "y": 50.0
+        },
+        {
+          "x": 0.0,
+          "y": 50.0
+        }
+      ],
+      "area_sf": 22.2,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    }
+  ],
+  "doors": [],
+  "topology": [],
+  "expected_label": "FAIL",
+  "expected_violations": [
+    {
+      "rule_id": "ADA_604",
+      "element": "BATH_1",
+      "measured": 50.0,
+      "threshold": 56.0,
+      "units": "inches",
+      "severity": "civil_rights"
+    }
+  ],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_1BR_shallow_bath",
+    "mutation": "rear_clearance_50in"
+  }
+}

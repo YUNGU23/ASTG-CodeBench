@@ -1,0 +1,53 @@
+{
+  "case_id": "ASTG-US-WC-PASS-02",
+  "version": "0.1.0",
+  "seed": 303,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "ADA 2010",
+    "section": "604",
+    "source_url": "https://www.ada.gov"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "2BR",
+  "spaces": [
+    {
+      "id": "BATH_1",
+      "type": "bathroom",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 72.0,
+          "y": 0.0
+        },
+        {
+          "x": 72.0,
+          "y": 66.0
+        },
+        {
+          "x": 0.0,
+          "y": 66.0
+        }
+      ],
+      "area_sf": 33.0,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    }
+  ],
+  "doors": [],
+  "topology": [],
+  "expected_label": "PASS",
+  "expected_violations": [],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_2BR_primary_bath",
+    "mutation": "generous_accessible_72x66in"
+  }
+}

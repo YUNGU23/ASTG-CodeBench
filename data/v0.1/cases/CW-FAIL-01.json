@@ -1,7 +1,7 @@
 {
   "case_id": "ASTG-US-CW-FAIL-01",
   "version": "0.1.0",
-  "seed": 1002,
+  "seed": 102,
   "jurisdiction": {
     "country": "US",
     "code_edition": "IBC 2024",
@@ -32,7 +32,7 @@
           "y": 43.0
         }
       ],
-      "area_sf": 71.67,
+      "area_sf": 71.7,
       "clear_width_in": 43.0,
       "occupant_load": 60,
       "has_window": false,
@@ -60,7 +60,7 @@
           "y": 43.0
         }
       ],
-      "area_sf": 17.92,
+      "area_sf": 17.9,
       "clear_width_in": null,
       "occupant_load": null,
       "has_window": false,
@@ -101,7 +101,7 @@
   "oracle_version": null,
   "provenance": {
     "generation_method": "parametric_perturbation",
-    "base_typology": "US_2BR_double_loaded_corridor",
-    "mutation": "corridor_width_threshold_minus_1in"
+    "base_typology": "US_2BR_corridor",
+    "mutation": "width_threshold_minus_1in"
   }
 }

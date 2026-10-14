@@ -1,0 +1,90 @@
+{
+  "case_id": "ASTG-US-EG-FAIL-02",
+  "version": "0.1.0",
+  "seed": 204,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "IBC 2024",
+    "section": "1006.2",
+    "source_url": "https://codes.iccsafe.org"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "STUDIO",
+  "spaces": [
+    {
+      "id": "R1",
+      "type": "living",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 180.0,
+          "y": 0.0
+        },
+        {
+          "x": 180.0,
+          "y": 144.0
+        },
+        {
+          "x": 0.0,
+          "y": 144.0
+        }
+      ],
+      "area_sf": 180.0,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": true,
+      "window_area_sf": 20.0,
+      "is_accessible": true
+    },
+    {
+      "id": "STAIR_1",
+      "type": "stairwell",
+      "polygon": [
+        {
+          "x": 300.0,
+          "y": 0.0
+        },
+        {
+          "x": 400.0,
+          "y": 0.0
+        },
+        {
+          "x": 400.0,
+          "y": 100.0
+        },
+        {
+          "x": 300.0,
+          "y": 100.0
+        }
+      ],
+      "area_sf": 69.4,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    }
+  ],
+  "doors": [],
+  "topology": [],
+  "expected_label": "FAIL",
+  "expected_violations": [
+    {
+      "rule_id": "IBC_1006.2",
+      "element": "R1",
+      "measured": 9999.0,
+      "threshold": 75.0,
+      "units": "feet",
+      "severity": "life_safety"
+    }
+  ],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_studio_isolated",
+    "mutation": "disconnected_topology_trap"
+  }
+}

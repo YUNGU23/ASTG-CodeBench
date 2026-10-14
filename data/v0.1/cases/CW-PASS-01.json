@@ -1,7 +1,7 @@
 {
   "case_id": "ASTG-US-CW-PASS-01",
   "version": "0.1.0",
-  "seed": 1001,
+  "seed": 101,
   "jurisdiction": {
     "country": "US",
     "code_edition": "IBC 2024",
@@ -92,7 +92,7 @@
   "oracle_version": null,
   "provenance": {
     "generation_method": "parametric_perturbation",
-    "base_typology": "US_2BR_double_loaded_corridor",
-    "mutation": "corridor_width_threshold_plus_1in"
+    "base_typology": "US_2BR_corridor",
+    "mutation": "width_threshold_plus_1in"
   }
 }

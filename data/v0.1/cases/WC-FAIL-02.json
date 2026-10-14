@@ -1,0 +1,70 @@
+{
+  "case_id": "ASTG-US-WC-FAIL-02",
+  "version": "0.1.0",
+  "seed": 304,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "ADA 2010",
+    "section": "604",
+    "source_url": "https://www.ada.gov"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "STUDIO",
+  "spaces": [
+    {
+      "id": "BATH_1",
+      "type": "bathroom",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 48.0,
+          "y": 0.0
+        },
+        {
+          "x": 48.0,
+          "y": 48.0
+        },
+        {
+          "x": 0.0,
+          "y": 48.0
+        }
+      ],
+      "area_sf": 16.0,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    }
+  ],
+  "doors": [],
+  "topology": [],
+  "expected_label": "FAIL",
+  "expected_violations": [
+    {
+      "rule_id": "ADA_604",
+      "element": "BATH_1",
+      "measured": 48.0,
+      "threshold": 60.0,
+      "units": "inches",
+      "severity": "civil_rights"
+    },
+    {
+      "rule_id": "ADA_604",
+      "element": "BATH_1",
+      "measured": 48.0,
+      "threshold": 56.0,
+      "units": "inches",
+      "severity": "civil_rights"
+    }
+  ],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_studio_powder",
+    "mutation": "severe_pinch_48x48in"
+  }
+}

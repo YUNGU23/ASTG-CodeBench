@@ -1,0 +1,98 @@
+{
+  "case_id": "ASTG-US-CW-PASS-02",
+  "version": "0.1.0",
+  "seed": 103,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "IBC 2024",
+    "section": "1020.2",
+    "source_url": "https://codes.iccsafe.org"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "3BR",
+  "spaces": [
+    {
+      "id": "C1",
+      "type": "corridor",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 360.0,
+          "y": 0.0
+        },
+        {
+          "x": 360.0,
+          "y": 60.0
+        },
+        {
+          "x": 0.0,
+          "y": 60.0
+        }
+      ],
+      "area_sf": 150.0,
+      "clear_width_in": 60.0,
+      "occupant_load": 80,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    },
+    {
+      "id": "ENTRY_1",
+      "type": "entry",
+      "polygon": [
+        {
+          "x": 360.0,
+          "y": 0.0
+        },
+        {
+          "x": 432.0,
+          "y": 0.0
+        },
+        {
+          "x": 432.0,
+          "y": 60.0
+        },
+        {
+          "x": 360.0,
+          "y": 60.0
+        }
+      ],
+      "area_sf": 30.0,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    }
+  ],
+  "doors": [
+    {
+      "id": "D1",
+      "from_space": "C1",
+      "to_space": "ENTRY_1",
+      "door_type": "hinged",
+      "clear_opening_in": 40.0,
+      "latch_clearance_in": 24.0
+    }
+  ],
+  "topology": [
+    {
+      "source": "C1",
+      "target": "ENTRY_1",
+      "via": "D1",
+      "is_egress": true,
+      "is_accessible": true
+    }
+  ],
+  "expected_label": "PASS",
+  "expected_violations": [],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_3BR_corridor",
+    "mutation": "generous_width_60in"
+  }
+}

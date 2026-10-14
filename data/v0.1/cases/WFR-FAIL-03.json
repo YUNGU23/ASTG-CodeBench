@@ -1,0 +1,90 @@
+{
+  "case_id": "ASTG-US-WFR-FAIL-03",
+  "version": "0.1.0",
+  "seed": 506,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "LEED v4.1 (voluntary)",
+    "section": "EQ Credit: Daylight",
+    "source_url": "https://www.usgbc.org"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "2BR",
+  "spaces": [
+    {
+      "id": "LIVING_1",
+      "type": "living",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 200.0,
+          "y": 0.0
+        },
+        {
+          "x": 200.0,
+          "y": 150.0
+        },
+        {
+          "x": 0.0,
+          "y": 150.0
+        }
+      ],
+      "area_sf": 208.3,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": true,
+      "window_area_sf": 32.0,
+      "is_accessible": true
+    },
+    {
+      "id": "KITCHEN_1",
+      "type": "kitchen",
+      "polygon": [
+        {
+          "x": 200.0,
+          "y": 0.0
+        },
+        {
+          "x": 320.0,
+          "y": 0.0
+        },
+        {
+          "x": 320.0,
+          "y": 100.0
+        },
+        {
+          "x": 200.0,
+          "y": 100.0
+        }
+      ],
+      "area_sf": 83.3,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": true,
+      "window_area_sf": 4.0,
+      "is_accessible": true
+    }
+  ],
+  "doors": [],
+  "topology": [],
+  "expected_label": "FAIL",
+  "expected_violations": [
+    {
+      "rule_id": "WFR_10PCT",
+      "element": "KITCHEN_1",
+      "measured": 0.048,
+      "threshold": 0.1,
+      "units": "ratio",
+      "severity": "voluntary"
+    }
+  ],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_2BR_open_kitchen",
+    "mutation": "kitchen_underglazed_5pct"
+  }
+}

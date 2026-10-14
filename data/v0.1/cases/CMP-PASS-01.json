@@ -1,0 +1,227 @@
+{
+  "case_id": "ASTG-US-CMP-PASS-01",
+  "version": "0.1.0",
+  "seed": 601,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "IBC 2024 / ADA 2010",
+    "section": "Composite",
+    "source_url": "https://codes.iccsafe.org"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "1BR",
+  "spaces": [
+    {
+      "id": "C1",
+      "type": "corridor",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 240.0,
+          "y": 0.0
+        },
+        {
+          "x": 240.0,
+          "y": 48.0
+        },
+        {
+          "x": 0.0,
+          "y": 48.0
+        }
+      ],
+      "area_sf": 80.0,
+      "clear_width_in": 48.0,
+      "occupant_load": 40,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    },
+    {
+      "id": "LIVING_1",
+      "type": "living",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 48.0
+        },
+        {
+          "x": 200.0,
+          "y": 48.0
+        },
+        {
+          "x": 200.0,
+          "y": 198.0
+        },
+        {
+          "x": 0.0,
+          "y": 198.0
+        }
+      ],
+      "area_sf": 208.3,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": true,
+      "window_area_sf": 28.0,
+      "is_accessible": true
+    },
+    {
+      "id": "BEDROOM_1",
+      "type": "bedroom",
+      "polygon": [
+        {
+          "x": 200.0,
+          "y": 48.0
+        },
+        {
+          "x": 340.0,
+          "y": 48.0
+        },
+        {
+          "x": 340.0,
+          "y": 188.0
+        },
+        {
+          "x": 200.0,
+          "y": 188.0
+        }
+      ],
+      "area_sf": 136.1,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": true,
+      "window_area_sf": 18.0,
+      "is_accessible": true
+    },
+    {
+      "id": "BATH_1",
+      "type": "bathroom",
+      "polygon": [
+        {
+          "x": 200.0,
+          "y": 188.0
+        },
+        {
+          "x": 280.0,
+          "y": 188.0
+        },
+        {
+          "x": 280.0,
+          "y": 252.0
+        },
+        {
+          "x": 200.0,
+          "y": 252.0
+        }
+      ],
+      "area_sf": 35.6,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    },
+    {
+      "id": "ENTRY_1",
+      "type": "entry",
+      "polygon": [
+        {
+          "x": 240.0,
+          "y": 0.0
+        },
+        {
+          "x": 300.0,
+          "y": 0.0
+        },
+        {
+          "x": 300.0,
+          "y": 48.0
+        },
+        {
+          "x": 240.0,
+          "y": 48.0
+        }
+      ],
+      "area_sf": 20.0,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    }
+  ],
+  "doors": [
+    {
+      "id": "D_MAIN",
+      "from_space": "C1",
+      "to_space": "ENTRY_1",
+      "door_type": "hinged",
+      "clear_opening_in": 36.0,
+      "latch_clearance_in": 18.0
+    },
+    {
+      "id": "D_LIVING",
+      "from_space": "C1",
+      "to_space": "LIVING_1",
+      "door_type": "hinged",
+      "clear_opening_in": 34.0,
+      "latch_clearance_in": 18.0
+    },
+    {
+      "id": "D_BR1",
+      "from_space": "LIVING_1",
+      "to_space": "BEDROOM_1",
+      "door_type": "hinged",
+      "clear_opening_in": 34.0,
+      "latch_clearance_in": 18.0
+    },
+    {
+      "id": "D_BATH",
+      "from_space": "BEDROOM_1",
+      "to_space": "BATH_1",
+      "door_type": "hinged",
+      "clear_opening_in": 34.0,
+      "latch_clearance_in": 18.0
+    }
+  ],
+  "topology": [
+    {
+      "source": "C1",
+      "target": "ENTRY_1",
+      "via": "D_MAIN",
+      "is_egress": true,
+      "is_accessible": true
+    },
+    {
+      "source": "C1",
+      "target": "LIVING_1",
+      "via": "D_LIVING",
+      "is_egress": false,
+      "is_accessible": true
+    },
+    {
+      "source": "LIVING_1",
+      "target": "BEDROOM_1",
+      "via": "D_BR1",
+      "is_egress": false,
+      "is_accessible": true
+    },
+    {
+      "source": "BEDROOM_1",
+      "target": "BATH_1",
+      "via": "D_BATH",
+      "is_egress": false,
+      "is_accessible": true
+    }
+  ],
+  "expected_label": "PASS",
+  "expected_violations": [],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_1BR_full_suite",
+    "mutation": "fully_compliant_baseline"
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "case_id": "ASTG-US-DOOR-PASS-02",
+  "version": "0.1.0",
+  "seed": 403,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "ADA 2010",
+    "section": "404",
+    "source_url": "https://www.ada.gov"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "2BR",
+  "spaces": [
+    {
+      "id": "ENTRY_1",
+      "type": "entry",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 72.0,
+          "y": 0.0
+        },
+        {
+          "x": 72.0,
+          "y": 72.0
+        },
+        {
+          "x": 0.0,
+          "y": 72.0
+        }
+      ],
+      "area_sf": 36.0,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    },
+    {
+      "id": "LIVING_1",
+      "type": "living",
+      "polygon": [
+        {
+          "x": 72.0,
+          "y": 0.0
+        },
+        {
+          "x": 272.0,
+          "y": 0.0
+        },
+        {
+          "x": 272.0,
+          "y": 150.0
+        },
+        {
+          "x": 72.0,
+          "y": 150.0
+        }
+      ],
+      "area_sf": 208.3,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": true,
+      "window_area_sf": 25.0,
+      "is_accessible": true
+    }
+  ],
+  "doors": [
+    {
+      "id": "D_MAIN",
+      "from_space": "ENTRY_1",
+      "to_space": "LIVING_1",
+      "door_type": "hinged",
+      "clear_opening_in": 36.0,
+      "latch_clearance_in": 24.0
+    }
+  ],
+  "topology": [
+    {
+      "source": "ENTRY_1",
+      "target": "LIVING_1",
+      "via": "D_MAIN",
+      "is_egress": false,
+      "is_accessible": true
+    }
+  ],
+  "expected_label": "PASS",
+  "expected_violations": [],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_2BR_entry",
+    "mutation": "wide_door_36in"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "case_id": "ASTG-US-DOOR-FAIL-02",
+  "version": "0.1.0",
+  "seed": 404,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "ADA 2010",
+    "section": "404",
+    "source_url": "https://www.ada.gov"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "1BR",
+  "spaces": [
+    {
+      "id": "HALL_1",
+      "type": "hallway",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 120.0,
+          "y": 0.0
+        },
+        {
+          "x": 120.0,
+          "y": 48.0
+        },
+        {
+          "x": 0.0,
+          "y": 48.0
+        }
+      ],
+      "area_sf": 40.0,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": false,
+      "window_area_sf": null,
+      "is_accessible": true
+    },
+    {
+      "id": "BEDROOM_1",
+      "type": "bedroom",
+      "polygon": [
+        {
+          "x": 120.0,
+          "y": 0.0
+        },
+        {
+          "x": 260.0,
+          "y": 0.0
+        },
+        {
+          "x": 260.0,
+          "y": 140.0
+        },
+        {
+          "x": 120.0,
+          "y": 140.0
+        }
+      ],
+      "area_sf": 136.1,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": true,
+      "window_area_sf": 15.0,
+      "is_accessible": true
+    }
+  ],
+  "doors": [
+    {
+      "id": "D_BR1",
+      "from_space": "HALL_1",
+      "to_space": "BEDROOM_1",
+      "door_type": "hinged",
+      "clear_opening_in": 34.0,
+      "latch_clearance_in": 12.0
+    }
+  ],
+  "topology": [
+    {
+      "source": "HALL_1",
+      "target": "BEDROOM_1",
+      "via": "D_BR1",
+      "is_egress": false,
+      "is_accessible": true
+    }
+  ],
+  "expected_label": "FAIL",
+  "expected_violations": [
+    {
+      "rule_id": "ADA_404",
+      "element": "D_BR1",
+      "measured": 12.0,
+      "threshold": 18.0,
+      "units": "inches",
+      "severity": "civil_rights"
+    }
+  ],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_1BR_hallway",
+    "mutation": "latch_clearance_fail_12in"
+  }
+}

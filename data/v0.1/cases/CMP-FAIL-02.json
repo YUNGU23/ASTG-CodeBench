@@ -1,0 +1,115 @@
+{
+  "case_id": "ASTG-US-CMP-FAIL-02",
+  "version": "0.1.0",
+  "seed": 604,
+  "jurisdiction": {
+    "country": "US",
+    "code_edition": "IBC 2024 / ADA 2010",
+    "section": "Composite",
+    "source_url": "https://codes.iccsafe.org"
+  },
+  "building_type": "R-2 Multifamily",
+  "unit_type": "2BR",
+  "spaces": [
+    {
+      "id": "LIVING_1",
+      "type": "living",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 200.0,
+          "y": 0.0
+        },
+        {
+          "x": 200.0,
+          "y": 150.0
+        },
+        {
+          "x": 0.0,
+          "y": 150.0
+        }
+      ],
+      "area_sf": 208.3,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": true,
+      "window_area_sf": 30.0,
+      "is_accessible": true
+    },
+    {
+      "id": "BEDROOM_1",
+      "type": "bedroom",
+      "polygon": [
+        {
+          "x": 200.0,
+          "y": 0.0
+        },
+        {
+          "x": 340.0,
+          "y": 0.0
+        },
+        {
+          "x": 340.0,
+          "y": 140.0
+        },
+        {
+          "x": 200.0,
+          "y": 140.0
+        }
+      ],
+      "area_sf": 136.1,
+      "clear_width_in": null,
+      "occupant_load": null,
+      "has_window": true,
+      "window_area_sf": 10.0,
+      "is_accessible": true
+    }
+  ],
+  "doors": [
+    {
+      "id": "D_BR1",
+      "from_space": "LIVING_1",
+      "to_space": "BEDROOM_1",
+      "door_type": "hinged",
+      "clear_opening_in": 30.0,
+      "latch_clearance_in": 18.0
+    }
+  ],
+  "topology": [
+    {
+      "source": "LIVING_1",
+      "target": "BEDROOM_1",
+      "via": "D_BR1",
+      "is_egress": false,
+      "is_accessible": true
+    }
+  ],
+  "expected_label": "FAIL",
+  "expected_violations": [
+    {
+      "rule_id": "ADA_404",
+      "element": "D_BR1",
+      "measured": 30.0,
+      "threshold": 32.0,
+      "units": "inches",
+      "severity": "civil_rights"
+    },
+    {
+      "rule_id": "WFR_10PCT",
+      "element": "BEDROOM_1",
+      "measured": 0.0735,
+      "threshold": 0.1,
+      "units": "ratio",
+      "severity": "voluntary"
+    }
+  ],
+  "oracle_version": null,
+  "provenance": {
+    "generation_method": "parametric_perturbation",
+    "base_typology": "US_2BR_family_suite",
+    "mutation": "compound_door_and_daylight_violation"
+  }
+}
