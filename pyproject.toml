@@ -43,7 +43,7 @@ dev = [
 astg-bench = "astg_codebench.cli:app"
 
 [project.urls]
-Homepage = "https://github.com/yun-gu/ASTG-CodeBench"
-Repository = "https://github.com/yun-gu/ASTG-CodeBench"
-Issues = "https://github.com/yun-gu/ASTG-CodeBench/issues"
-Documentation = "https://github.com/yun-gu/ASTG-CodeBench#readme"
+Homepage = "https://github.com/YUNGU23/ASTG-CodeBench"
+Repository = "https://github.com/YUNGU23/ASTG-CodeBench"
+Issues = "https://github.com/YUNGU23/ASTG-CodeBench/issues"
+Documentation = "https://github.com/YUNGU23/ASTG-CodeBench#readme"

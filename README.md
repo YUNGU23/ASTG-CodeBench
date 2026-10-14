@@ -30,7 +30,7 @@ ASTG-CodeBench fills this gap by providing a controlled, reproducible evaluation
 
 ```bash
 # Install from source
-git clone https://github.com/YOUR_USERNAME/ASTG-CodeBench.git
+git clone https://github.com/YUNGU23/ASTG-CodeBench.git
 cd ASTG-CodeBench
 pip install -e ".[dev]"
 
