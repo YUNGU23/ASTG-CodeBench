@@ -47,3 +47,8 @@ Homepage = "https://github.com/YUNGU23/ASTG-CodeBench"
 Repository = "https://github.com/YUNGU23/ASTG-CodeBench"
 Issues = "https://github.com/YUNGU23/ASTG-CodeBench/issues"
 Documentation = "https://github.com/YUNGU23/ASTG-CodeBench#readme"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+

@@ -179,7 +179,7 @@
     },
     {
       "id": "D_BATH",
-      "from_space": "BEDROOM_1",
+      "from_space": "LIVING_1",
       "to_space": "BATH_1",
       "door_type": "hinged",
       "clear_opening_in": 34.0,
@@ -209,7 +209,7 @@
       "is_accessible": true
     },
     {
-      "source": "BEDROOM_1",
+      "source": "LIVING_1",
       "target": "BATH_1",
       "via": "D_BATH",
       "is_egress": false,

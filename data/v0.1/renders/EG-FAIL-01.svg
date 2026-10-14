@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-10-13T20:56:47.351259</dc:date>
+    <dc:date>2026-10-13T21:09:00.824461</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -35,7 +35,7 @@ L 225.109741 332.394419
 L 225.109741 235.725581 
 L 109.107134 235.725581 
 z
-" clip-path="url(#pb07bf1f794)" style="fill: #fdedec; stroke: #e74c3c; stroke-width: 2.5; stroke-linejoin: miter"/>
+" clip-path="url(#pc9e82740d9)" style="fill: #fdedec; stroke: #e74c3c; stroke-width: 2.5; stroke-linejoin: miter"/>
    </g>
    <g id="patch_3">
     <path d="M 225.109741 332.394419 
@@ -43,7 +43,7 @@ L 321.778579 332.394419
 L 321.778579 293.726884 
 L 225.109741 293.726884 
 z
-" clip-path="url(#pb07bf1f794)" style="fill: #f2f4f4; stroke: #2c3e50; stroke-width: 1.2; stroke-linejoin: miter"/>
+" clip-path="url(#pc9e82740d9)" style="fill: #f2f4f4; stroke: #2c3e50; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_4">
     <path d="M 321.778579 332.394419 
@@ -51,7 +51,7 @@ L 418.447418 332.394419
 L 418.447418 293.726884 
 L 321.778579 293.726884 
 z
-" clip-path="url(#pb07bf1f794)" style="fill: #f2f4f4; stroke: #2c3e50; stroke-width: 1.2; stroke-linejoin: miter"/>
+" clip-path="url(#pc9e82740d9)" style="fill: #f2f4f4; stroke: #2c3e50; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_5">
     <path d="M 418.447418 332.394419 
@@ -59,7 +59,7 @@ L 515.116256 332.394419
 L 515.116256 293.726884 
 L 418.447418 293.726884 
 z
-" clip-path="url(#pb07bf1f794)" style="fill: #f2f4f4; stroke: #2c3e50; stroke-width: 1.2; stroke-linejoin: miter"/>
+" clip-path="url(#pc9e82740d9)" style="fill: #f2f4f4; stroke: #2c3e50; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
    <g id="patch_6">
     <path d="M 515.116256 332.394419 
@@ -67,7 +67,7 @@ L 595.673622 332.394419
 L 595.673622 251.837054 
 L 515.116256 251.837054 
 z
-" clip-path="url(#pb07bf1f794)" style="fill: #eaecee; stroke: #2c3e50; stroke-width: 1.2; stroke-linejoin: miter"/>
+" clip-path="url(#pc9e82740d9)" style="fill: #eaecee; stroke: #2c3e50; stroke-width: 1.2; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Typology: US_2BR_extended_corridor | Unit: 2BR | Code: IBC 2024 1006.2 -->
@@ -2532,7 +2532,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pb07bf1f794">
+  <clipPath id="pc9e82740d9">
    <rect x="20.010688" y="200.28034" width="664.759379" height="167.55932"/>
   </clipPath>
  </defs>
