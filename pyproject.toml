@@ -1,0 +1,49 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "astg-codebench"
+version = "0.1.0"
+description = "A standardized spatial topological benchmark for automated US building code compliance evaluation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Yun Gu", email = "yungu9023@gmail.com" },
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "networkx>=3.0",
+    "shapely>=2.0",
+    "pydantic>=2.0",
+    "typer>=0.9",
+    "matplotlib>=3.7",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "hypothesis",
+    "ruff",
+    "mypy",
+]
+
+[project.scripts]
+astg-bench = "astg_codebench.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/yun-gu/ASTG-CodeBench"
+Repository = "https://github.com/yun-gu/ASTG-CodeBench"
+Issues = "https://github.com/yun-gu/ASTG-CodeBench/issues"
+Documentation = "https://github.com/yun-gu/ASTG-CodeBench#readme"

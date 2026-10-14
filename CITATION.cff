@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite it"
+title: "ASTG-CodeBench"
+type: dataset
+authors:
+  - family-names: "Gu"
+    given-names: "Yun"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+version: 0.1.0
+date-released: "2026-10-13"
+license: Apache-2.0
+repository-code: "https://github.com/yun-gu/ASTG-CodeBench"
+keywords:
+  - building-code-compliance
+  - spatial-graph
+  - benchmark
+  - IBC
+  - ADA
+  - multifamily-housing
