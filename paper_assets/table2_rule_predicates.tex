@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering
+\small
+\caption{Formalized building code compliance predicates implemented in ASTG-CodeBench v0.1.}
+\label{tab:rule_predicates}
+\begin{tabular}{lllllcc}
+\toprule
+\textbf{Rule ID} & \textbf{Regulatory Source} & \textbf{Section} & \textbf{Prescriptive Scope} & \textbf{Formal Threshold} & \textbf{Severity} & \textbf{Domain} \\
+\midrule
+\texttt{IBC\_1020.2} & IBC 2024 & \S 1020.2 & Corridor min. clear passage & $\ge 44.0''$ ($OL \ge 50$); $\ge 36.0''$ ($OL < 50$) & Life Safety & Egress \\
+\texttt{IBC\_1006.2} & IBC 2024 & \S 1006.2 & Exit access travel distance & $\le 75.0'\text{ (unsprink.)}; \le 125.0'\text{ (sprink.)}$ & Life Safety & Egress \\
+\texttt{ADA\_604}    & ADA 2010 & \S 604    & Water closet clear space    & $\ge 60.0''\text{ side} \times 56.0''\text{ rear}$ & Civil Rights & Accessibility \\
+\texttt{ADA\_404}    & ADA 2010 & \S 404    & Door maneuvering clearance  & $\ge 32.0''\text{ opening}, \ge 18.0''\text{ pull-latch}$ & Civil Rights & Accessibility \\
+\texttt{WFR\_10PCT}  & LEED v4.1 & EQ Credit & Window-to-floor area ratio  & $\ge 10.0\%$ (habitable spaces) & Voluntary & Daylight \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,16 @@
+\begin{table*}[t]
+\centering
+\small
+\caption{Performance comparison of automated building code compliance checking methods on ASTG-CodeBench ($N=36$). ASTG Symbolic Oracle achieves zero false negatives on life-safety provisions.}
+\label{tab:baseline_comparison}
+\begin{tabular}{llcccccc}
+\toprule
+\textbf{Method / System} & \textbf{Paradigm} & \textbf{Precision} & \textbf{Recall} & \textbf{F1} & \textbf{Accuracy} & \textbf{Life-Safety FN} & \textbf{Avg. Latency} \\
+\midrule
+\textbf{ASTG Deterministic Oracle (Ours)} & Symbolic Graph & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} & \textbf{1.000} & 0 & 0.1~ms \\
+Chain-of-Thought LLM (Few-Shot GPT-4o) & LLM Prompting & 0.765 & 0.722 & 0.743 & 0.750 & \textbf{1} & 1.99~s \\
+Vanilla LLM (Zero-Shot GPT-4o) & LLM Prompting & 0.615 & 0.444 & 0.516 & 0.583 & \textbf{4} & 1.02~s \\
+Simplified Heuristic Baseline & Heuristic Rule & 1.000 & 1.000 & 1.000 & 1.000 & 0 & 6.5~ms \\
+\bottomrule
+\end{tabular}
+\end{table*}

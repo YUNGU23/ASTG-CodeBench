@@ -93,11 +93,14 @@ Comparative performance of automated compliance checking methods on ASTG-CodeBen
 
 ## Documentation & Protocols
 
+- [Mathematical Formulation](docs/MATHEMATICAL_FORMULATION.md) — Formal First-Order Logic (FOL) predicates and attributed graph theory.
 - [Methodology](docs/METHODOLOGY.md) — Parametric perturbation and test case generation design.
 - [Limitations & Scope](docs/LIMITATIONS.md) — Scope boundaries, assumptions, and known biases.
 - [Code Provenance & Copyright](docs/CODE_PROVENANCE.md) — Fair use, section identifiers, and copyright compliance.
 - [Independent Evaluation Protocol](docs/INDEPENDENT_EVALUATION_GUIDE.md) — Standardized audit protocol and evaluation form for external researchers and licensed architects.
 - [Zenodo Integration Guide](docs/ZENODO_INTEGRATION_GUIDE.md) — Instructions for minting persistent academic DOIs via Zenodo.
+- [Contributing Guidelines](CONTRIBUTING.md) — How to add new code predicates or contribute test cases.
+- [Paper Assets Export](scripts/export_paper_assets.py) — One-click script exporting 300 DPI composite figures and native LaTeX tables.
 
 ## Architecture
 
